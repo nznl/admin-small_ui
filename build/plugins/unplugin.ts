@@ -7,8 +7,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { getSrcPath } from '..';
 
-export default function unplugin(viteEnv: EnvDts.MetaEnvCustom) {
-  const { VITE_ICON_LOCAL_PREFIX, VITE_ICON_PREFIX } = viteEnv as EnvDts.MetaEnvCustom;
+export default function unplugin(viteEnv: MetaEnvCustom) {
+  const { VITE_ICON_LOCAL_PREFIX, VITE_ICON_PREFIX } = viteEnv as MetaEnvCustom;
   const srcPath: string = getSrcPath();
   const localIconPath: string = `${srcPath}/assets/svg`;
     /** 本地svg图标集合名称 */

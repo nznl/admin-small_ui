@@ -1,5 +1,5 @@
 <template>
-  <el-space>基础布局</el-space>
+  <!-- <el-space>基础布局</el-space> -->
   <set-theme></set-theme>
   <div class="text-primary text-20px hover:text-#5f5f5f cursor-pointer">
     <el-button type="primary">AutoImport</el-button>

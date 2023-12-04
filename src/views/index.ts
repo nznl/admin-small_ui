@@ -13,7 +13,6 @@ function getViewsComponents() {
     const routeKey: string = key.replace('.vue', '').replace('./', '').replace(/\//g, '_');
     components[routeKey] = views[key];
   });
-  console.log(components, 'com')
   return components;
 
 }

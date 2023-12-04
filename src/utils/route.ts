@@ -50,6 +50,9 @@ export function transformComponent(routeList: RouteDts.Basic[]) {
         route.component = componentList['embed_Embed'];
         break;
     }
+    if (route.children) {
+      transformComponent(route.children);
+    }
   }
   return routeList;
 }

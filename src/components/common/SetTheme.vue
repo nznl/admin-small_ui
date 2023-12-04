@@ -14,6 +14,7 @@
   <el-drawer
     v-model="isOpenDrawer"
     title="主题配置"
+    size="400px"
   >
     <el-divider>
       系统主题
@@ -26,24 +27,22 @@
       >
       </el-color-picker>
     </el-space>
+    <br/>
+    <button @click="toggleSystemMode">
+      <Icon icon="entypo:light-up" v-if="isDark" class="text-#000"></Icon>
+      <Icon icon="circum:dark" v-else class="text-#000"></Icon>
+    </button>
   </el-drawer>
 </template>
 
 <script lang="ts" setup>
 import { getRgbOfColor } from '@/utils/common';
+import { colorList } from '@/config';
 
 const isOpenDrawer = ref<boolean>(false);
 const themeColor = ref<string>('#409eff');
-const predefineColors = ref([
-  '#ff4500',
-  '#ff8c00',
-  '#ffd700',
-  '#90ee90',
-  '#00ced1',
-  '#1e90ff',
-  '#c71585',
-  '#409eff'
-])
+const predefineColors = ref(colorList);
+const isDark = ref<boolean>(document.getElementsByTagName('html')[0].classList.contains('dark'));
 
 watch(themeColor, color => {
   if (color) {
@@ -63,6 +62,15 @@ watch(themeColor, color => {
     document.documentElement.style.cssText = style;
   }
 })
+
+function toggleSystemMode() {
+  if (document.getElementsByTagName('html')[0].classList.contains('dark')) {
+    document.getElementsByTagName('html')[0].classList.remove('dark');
+  } else {
+    document.getElementsByTagName('html')[0].classList.add('dark');
+  }
+  isDark.value = document.getElementsByTagName('html')[0].classList.contains('dark');
+}
 </script>
 
 <style lang="scss" scoped>

@@ -6,7 +6,7 @@ export default defineConfig({
   ],
 
   shortcuts: {
-    "h-full": "w-full h-full"
+    "wh-full": "w-full h-full"
   },
     
   theme: {

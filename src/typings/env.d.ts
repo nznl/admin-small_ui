@@ -1,5 +1,4 @@
 
-declare namespace EnvDts {
     
   interface MetaEnvCustom extends ImportMetaEnv {
     // 基础路径
@@ -14,6 +13,11 @@ declare namespace EnvDts {
     readonly VITE_HTTP_PROXY: 'Y' | 'N';
     // 路由器使用的历史记录模式是否是hash
     readonly VITE_HASH_ROUTE: 'Y' | 'N';
+    readonly VITE_SERVICE_ENV: 'dev' | 'prod'
+    readonly VITE_SERVER_PATTERN: string;
   }
-    
-} 
+  
+  type ServiceEnvType = 'dev' | 'prod';
+
+
+
